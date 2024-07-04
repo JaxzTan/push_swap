@@ -36,8 +36,7 @@ fclean = clean
 	rm -rf $(NAME)
 	make -C $(LIBFT_PATH) fclean
 
-echo :
-	@echo "hahaha"
+re : fclean all
 
 norm : 
 	norminette *.c
