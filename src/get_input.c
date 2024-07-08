@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 13:19:33 by chtan             #+#    #+#             */
-/*   Updated: 2024/06/29 18:13:45 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/08 15:48:18 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,9 @@ int	check_num(int ac, char **av)
 		while (av[i][j])
 		{
 			if (av[i][j] == '+' || av[i][j] == '-' ||
-				ft_isdigit(av[i][j + 1]))
+				ft_isdigit(av[i][j]))
 				j++;
-			while (ft_isdigit(av[i][j]))
-				j++;
-			if (av[i][j] != '\0')
+			else
 				return (1);
 		}
 	}
@@ -60,16 +58,16 @@ char	**get_input(int ac, char **av)
 {
 	char	**numbers;
 
-	if (ac == 2 && av[1][0] != 0)
+	if (ac == 2 && av[1][0] != '\0')
 	{
 		numbers = ft_split(av[1], ' ');
-		if (!check_dup(av) && check_num(ac, av))
+		if (!check_dup(numbers) && check_num(ac, av))
 			return (numbers);
 	}
-	else if (ac > 2 && av[2][0] != 0)
+	else if (ac > 2 && av[2][0] != '\0')
 	{
-		if (!check_dup (av + 1) && !check_num (ac, (av + 1)))
-			return (numbers + 1);
+		if (!check_dup (av + 1) && !check_num (ac, av))
+			return (av + 1);
 	}
 	return (0);
 }

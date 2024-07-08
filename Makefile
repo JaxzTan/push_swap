@@ -6,6 +6,8 @@ CC = cc -Wall -Wextra -Werror -c
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
+SRC_DIR = src
+
 SRC = push_swap.c\
 	get_input.c\
 	assign_stack.c\
@@ -17,7 +19,7 @@ SRC = push_swap.c\
 	index.c\
 
 OBJ = $(SRC:%.c=%.o)
-
+FILES = $(addprefix $(SRC_DIR)/, $(SRC))
 $(LIBFT) : 
 	make -C $(LIBFT_PATH)
 	@echo libft done!!!

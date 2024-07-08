@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/08 11:02:29 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/08 14:03:08 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,11 @@ void	rrr(t_stack **a, t_stack **b);
 void	push(t_stack **dest, t_stack **src);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
+
+// label index for each node
+void	label_index(t_stack **stack, char *array);
+int		get_lstsize(t_stack **stack);
+void	bubble_sort(int *stack, int size);
+void	assign_index(t_stack **stack);
 
 #endif
