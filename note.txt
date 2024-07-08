@@ -1,2 +1,0 @@
-for now i ald put printf gnl into libft
-i ald settle get valid input and swap process
