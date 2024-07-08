@@ -11,6 +11,10 @@ SRC = push_swap.c\
 	assign_stack.c\
 	swap.c\
 	simple_sort.c\
+	rotate.c\
+	reverse_rotate.c\
+	push.c\
+	index.c\
 
 OBJ = $(SRC:%.c=%.o)
 

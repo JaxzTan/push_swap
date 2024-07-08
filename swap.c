@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 10:08:54 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/02 17:33:31 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/08 11:31:22 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sa(t_stack **a)
 	(*a)->next = temp->next;
 	temp->next = *a;
 	*a = temp;
-	ft_printf("sa");
+	ft_putstr_fd("sa", 1);
 }
 
 void	sb(t_stack **b)
@@ -35,12 +35,12 @@ void	sb(t_stack **b)
 	(*b)->next = temp->next;
 	temp->next = *b;
 	*b = temp;
-	ft_printf("sb");
+	ft_putstr_fd("sb", 1);
 }
 
 void	ss(t_stack **a, t_stack **b)
 {
 	sa(a);
 	sb(b);
-	ft_printf("ss");
+	ft_putstr_fd("ss", 1);
 }
