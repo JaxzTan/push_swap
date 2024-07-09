@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 11:17:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/09 13:23:09 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/09 15:02:15 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sort_2(t_stack **stack_a)
 	assign_index(stack_a);
 	temp = *stack_a;
 	if (temp->val > temp->next->val)
-		sa(&stack_a);
+		sa(stack_a);
 	else
 		ft_putstr_fd("ok", 1);
 }
@@ -39,21 +39,21 @@ void	sort_3(t_stack **stack_a)
 	second = temp->next->val;
 	third = temp->next->next->val;
 	if (first > second && first < third)
-		sa(&stack_a);
+		sa(stack_a);
 	else if (first > second && first > third && second < third)
 	{
-		sa(&stack_a);
-		rra(&stack_a);
+		sa(stack_a);
+		rra(stack_a);
 	}
 	else if (first > second && first > third && second < third)
-		ra(&stack_a);
+		ra(stack_a);
 	else if (first < second && first < third && second > third)
 	{
-		sa(&stack_a);
-		ra(&stack_a);
+		sa(stack_a);
+		ra(stack_a);
 	}
 	else if (first < second && first > third && second > third)
-		rra(&stack_a);
+		rra(stack_a);
 }
 
 int	count_element(t_stack **a, int count)

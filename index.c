@@ -6,13 +6,13 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:03:46 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/08 17:04:04 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/09 14:49:56 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	label_index(t_stack **stack, char *array)
+void	label_index(t_stack **stack, int *array)
 {
 	t_stack	*temp;
 	int		i;
@@ -21,7 +21,7 @@ void	label_index(t_stack **stack, char *array)
 	temp = *stack;
 	while (temp)
 	{
-		if (temp->val == ft_atoi(&array[i]))
+		if (temp->val == array[i])
 		{
 			temp->index = i;
 			temp = temp->next;

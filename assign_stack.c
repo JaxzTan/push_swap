@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:01:54 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/08 16:58:17 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/09 15:03:02 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*assign_node(t_stack **stack, int nb)
 	return (node);
 }
 
-t_stack	*assign_stack_a(t_stack **a, t_stack **input, int ac)
+t_stack	**assign_stack_a(t_stack **a, t_stack **input, int ac)
 {
 	int		nb;
 	int		i;
