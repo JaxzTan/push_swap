@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/09 13:23:18 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/09 15:03:14 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ char	**get_input(int ac, char **av);
 
 //	assign stack
 void	assign_node(t_stack **stack, int nb);
-int		assign_stack_a(t_stack **a, t_stack **input, int ac);
+t_stack	**assign_stack_a(t_stack **a, char **input, int ac);
 
 // label index for each node
-void	label_index(t_stack **stack, char *array);
+void	label_index(t_stack **stack, int *array);
 int		get_lstsize(t_stack **stack);
 void	bubble_sort(int *stack, int size);
 void	assign_index(t_stack **stack);
@@ -66,8 +66,9 @@ void	assign_index(t_stack **stack);
 // simple sort 2 & 3
 void	sort_2(t_stack **stack);
 void	sort_3(t_stack **stack_a);
-int			count_element(t_stack **a, int count);
-void		sort(t_stack **a, t_stack **b);
+int		count_element(t_stack **a, int count);
+void	sort(t_stack **a);
+
 // utils
 int		is_sorted(t_stack **a);
 
