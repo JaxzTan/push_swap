@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:15:24 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/08 10:35:09 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/09 14:01:00 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	reverse_rotate(t_stack **stack)
 		sec_last = last;
 		last = last->next;
 	}
-	sec_last->index = NULL;
+	sec_last->next = NULL;
 	last->next = *stack;
 	*stack = last;
 }

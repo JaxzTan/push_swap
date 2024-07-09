@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:15:37 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/08 11:02:04 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/09 14:00:18 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push(t_stack **dest, t_stack **src)
 	if ((*src) == NULL)
 		return ;
 	temp = (*src)->next;
-	(*src)->index = (*dest);
+	(*src)->next = (*dest);
 	*dest = *src;
 	*src = temp;
 }

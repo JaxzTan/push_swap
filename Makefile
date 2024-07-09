@@ -6,39 +6,42 @@ CC = cc -Wall -Wextra -Werror -c
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
-SRC_DIR = src
 
 SRC = push_swap.c\
 	get_input.c\
 	assign_stack.c\
 	swap.c\
-	simple_sort.c\
+	sort.c\
 	rotate.c\
 	reverse_rotate.c\
 	push.c\
 	index.c\
+	utils.c\
 
 OBJ = $(SRC:%.c=%.o)
-FILES = $(addprefix $(SRC_DIR)/, $(SRC))
+
 $(LIBFT) : 
 	make -C $(LIBFT_PATH)
 	@echo libft done!!!
 
 
-all : utils mandatory
-	$(AR) $(NAME) $(OBJ)
+all : $(NAME)
+
+$(NAME) : utils mandatory
+	$(AR) $(NAME) $(OBJ) $(LIBFT)
 
 mandatory :
 	$(CC) $(SRC)
 
-clean =  
+clean :  
 	rm -rf $(OBJ)
 	make -C libft clean
 
-utils : $(LIBFT)
+utils :
+	make -C libft all
 	@echo "libft built successfully"
 
-fclean = clean
+fclean : clean
 	rm -rf $(NAME)
 	make -C $(LIBFT_PATH) fclean
 
