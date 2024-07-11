@@ -48,4 +48,5 @@ fclean : clean
 re : fclean all
 
 norm : 
-	norminette *.c
+	norminette *.c *.h
+	make -C libft norm

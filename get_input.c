@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_input.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 13:19:33 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/08 15:48:18 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/11 20:14:11 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ int	check_dup(char **av)
 	int	i;
 	int	j;
 
-	i = 0;
-	j = 0;
-	while (av[i++])
+	i = -1;
+	while (av[++i])
 	{
 		j = i;
-		while (av[j++])
+		while (av[j])
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-				return (1);
+				error_message();
+			j++;
 		}
 	}
 	return (0);
@@ -54,9 +54,9 @@ int	check_num(int ac, char **av)
 	return (0);
 }
 
-char	**get_input(int ac, char **av)
+int	*get_input(int ac, char **av)
 {
-	char	**numbers;
+	int	*numbers;
 
 	if (ac == 2 && av[1][0] != '\0')
 	{

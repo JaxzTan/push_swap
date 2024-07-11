@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/09 15:03:14 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/11 21:53:11 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include "./libft/libft.h"
-
-# define INT_MIN -2147483648
-# define INT_MAX 2147483637
 
 typedef struct s_stack
 {
@@ -51,11 +49,11 @@ void	pb(t_stack **a, t_stack **b);
 //  check input
 int		check_dup(char **av);
 int		check_num(int ac, char **av);
-char	**get_input(int ac, char **av);
+int		*get_input(int ac, char **av);
 
 //	assign stack
-void	assign_node(t_stack **stack, int nb);
-t_stack	**assign_stack_a(t_stack **a, char **input, int ac);
+// void	assign_node(t_stack **stack, int nb);
+t_stack	*assign_stack_a(int *input, int ac);
 
 // label index for each node
 void	label_index(t_stack **stack, int *array);
@@ -71,5 +69,7 @@ void	sort(t_stack **a);
 
 // utils
 int		is_sorted(t_stack **a);
+void	error_message(void);
+// int		count_word(char *str);
 
 #endif
