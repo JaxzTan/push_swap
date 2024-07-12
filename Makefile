@@ -1,6 +1,6 @@
 NAME = push_swap
 AR = ar -crs
-CC = cc -Wall -Wextra -Werror -c
+CC = cc -Wall -Wextra -Werror
 
 # libft
 LIBFT_PATH = ./libft
@@ -20,6 +20,9 @@ SRC = push_swap.c\
 
 OBJ = $(SRC:%.c=%.o)
 
+%.o: %.c
+	$(CC) -c $< -o $@
+
 $(LIBFT) : 
 	make -C $(LIBFT_PATH)
 	@echo libft done!!!
@@ -27,11 +30,9 @@ $(LIBFT) :
 
 all : $(NAME)
 
-$(NAME) : utils mandatory
-	$(AR) $(NAME) $(OBJ) $(LIBFT)
+$(NAME) : utils $(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(LIBFT)
 
-mandatory :
-	$(CC) $(SRC)
 
 clean :  
 	rm -rf $(OBJ)

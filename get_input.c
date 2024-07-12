@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_input.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 13:19:33 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/11 20:14:11 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/12 14:42:31 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int	check_dup(char **av)
 	i = -1;
 	while (av[++i])
 	{
-		j = i;
+		j = i + 1;
 		while (av[j])
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-				error_message();
+				error_message("check dup");
 			j++;
 		}
 	}
@@ -54,9 +54,9 @@ int	check_num(int ac, char **av)
 	return (0);
 }
 
-int	*get_input(int ac, char **av)
+char	**get_input(int ac, char **av)
 {
-	int	*numbers;
+	char	**numbers;
 
 	if (ac == 2 && av[1][0] != '\0')
 	{
@@ -64,9 +64,9 @@ int	*get_input(int ac, char **av)
 		if (!check_dup(numbers) && check_num(ac, av))
 			return (numbers);
 	}
-	else if (ac > 2 && av[2][0] != '\0')
+	else if (ac > 2 && av[1][0] != '\0')
 	{
-		if (!check_dup (av + 1) && !check_num (ac, av))
+		if (!check_dup (av + 1) && !check_num (ac, av + 1))
 			return (av + 1);
 	}
 	return (0);

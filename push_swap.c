@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 13:29:47 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/11 21:54:24 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/12 14:45:43 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int ac, char **av)
 {
 	int		*input;
+	char	**temp;
 	t_stack	*a;
 	t_stack	*b;
 	int		num;
@@ -23,15 +24,17 @@ int	main(int ac, char **av)
 	b = NULL;
 	if (ac > 1)
 	{
-		input = get_input(ac, av);
-		if (!input)
-			return (write(2, "error\n", 6));
+		temp = get_input(ac, av);
+		if (!temp || *temp == NULL)
+			error_message("main");
 		num = ac - 1;
-		a = assign_stack_a(input, num); // error here because of a is pointer and return value of assiagn stack is duoble pointer
+		input = turn_array_to_int(temp);
+		a = assign_stack_a(input, num);
 		b = NULL;
 		assign_index(&a);
 		if (!is_sorted(&a))
 			return (0);
 		sort(&a);
 	}
+	return (0);
 }

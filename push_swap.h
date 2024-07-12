@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/11 21:53:11 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/12 14:23:46 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ void	pb(t_stack **a, t_stack **b);
 //  check input
 int		check_dup(char **av);
 int		check_num(int ac, char **av);
-int		*get_input(int ac, char **av);
+char	**get_input(int ac, char **av);
 
 //	assign stack
-// void	assign_node(t_stack **stack, int nb);
 t_stack	*assign_stack_a(int *input, int ac);
+int		*turn_array_to_int(char **array);
 
 // label index for each node
 void	label_index(t_stack **stack, int *array);
@@ -69,7 +69,8 @@ void	sort(t_stack **a);
 
 // utils
 int		is_sorted(t_stack **a);
-void	error_message(void);
-// int		count_word(char *str);
+void	error_message(char *str);
+int		count_word(char **str);
+long	ft_atol(char *str);
 
 #endif
