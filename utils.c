@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 10:51:27 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/12 14:23:30 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/13 17:04:51 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 int	is_sorted(t_stack **a)
 {
-	int		count;
 	t_stack	*temp;
 
 	temp = *a;
 	while (temp->next)
 	{
-		count = temp->val;
+		if (temp->val > temp->next->val)
+		{
+			return (1);
+			ft_printf ("not sorted\n");
+		}
 		temp = temp->next;
-		if (count > temp->val)
-			return (0);
 	}
-	return (1);
+	return (0);
+	free (temp);
+	ft_printf("sorted!\n");
 }
 
 void	error_message(char *str)

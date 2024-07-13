@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:03:46 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/09 14:49:56 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/13 10:30:24 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,5 @@ void	assign_index(t_stack **stack)
 	bubble_sort(array, size);
 	label_index(stack, array);
 	free(array);
+	ft_printf("index set successful!\n");
 }

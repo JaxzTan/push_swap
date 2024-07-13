@@ -24,7 +24,7 @@ OBJ = $(SRC:%.c=%.o)
 	$(CC) -c $< -o $@
 
 $(LIBFT) : 
-	make -C $(LIBFT_PATH)
+	make -C $(LIBFT_PATH) all
 	@echo libft done!!!
 
 
