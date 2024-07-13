@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 10:51:27 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/13 17:04:51 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/13 17:22:15 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ int	is_sorted(t_stack **a)
 		}
 		temp = temp->next;
 	}
-	return (0);
-	free (temp);
 	ft_printf("sorted!\n");
+	return (0);
 }
 
 void	error_message(char *str)
