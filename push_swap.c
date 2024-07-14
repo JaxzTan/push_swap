@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 13:29:47 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 16:04:21 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/14 16:30:23 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int	main(int ac, char **av)
 		if (!temp)
 			error_message("main");
 		num = count_word(temp);
+		if (num == 1){
+			ft_putstr_fd("num only 1", 1);
+			return (0);
+		}
 		input = turn_array_to_int(temp);
 		a = assign_stack_a(input, num);
 		b = NULL;
