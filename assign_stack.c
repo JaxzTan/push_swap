@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:01:54 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 11:51:16 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/14 16:07:54 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,21 @@ t_stack	*assign_stack_a(int *str, int num)
 	temp = a;
 	while (++i < num)
 	{
+		// 1. malloc a node
+		// 2. assign the node
+		// 3. node next points to NULL
+		// 4. assign previous node to point at current node
 		temp->val = str[i];
 		if (i + 1 < num)
 		{
-			temp->val = str[i];
+			temp->next = malloc(sizeof (t_stack));
 			temp = temp->next;
 		}
 		else
 			temp->next = NULL;
 	}
-	return (a);
 	ft_printf ("assign stack a success!\n");
+	return (a);
 }
 
 int	*turn_array_to_int(char **array)
@@ -54,7 +58,7 @@ int	*turn_array_to_int(char **array)
 	{
 		numb = ft_atol(array[i]);
 		if (numb > INT_MAX || numb < INT_MIN)
-			error_message("turnarraytoint");
+			error_message("not valid input");
 		num[i] = (int) numb;
 	}
 	ft_printf ("turn int success!\n");

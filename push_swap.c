@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 13:29:47 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 11:35:18 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/14 16:04:21 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,16 @@ int	main(int ac, char **av)
 		temp = get_input(ac, av);
 		if (!temp)
 			error_message("main");
-		num = ac - 1;
+		num = count_word(temp);
 		input = turn_array_to_int(temp);
 		a = assign_stack_a(input, num);
 		b = NULL;
 		assign_index(&a);
 		if (is_sorted(&a))
-			return(0);
+			ft_putstr_fd("is sorted", 1);
 		else
 			sort(&a);
+		printLinkedList(&a);
 	}
 	return (0);
 }

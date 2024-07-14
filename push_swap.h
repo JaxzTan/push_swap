@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/12 14:23:46 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/14 13:34:42 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,8 @@ int		is_sorted(t_stack **a);
 void	error_message(char *str);
 int		count_word(char **str);
 long	ft_atol(char *str);
+
+// temp
+void	printLinkedList(t_stack **head);
 
 #endif

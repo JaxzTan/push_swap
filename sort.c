@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 11:17:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/09 15:02:15 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/14 13:42:08 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int	count_element(t_stack **a, int count)
 		count++;
 		temp = temp->next;
 	}
+	ft_printf ("%d\n", count);
 	return (count);
 }
 

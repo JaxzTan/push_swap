@@ -1,6 +1,6 @@
 NAME = push_swap
 AR = ar -crs
-CC = cc -Wall -Wextra -Werror
+CC = cc -Wall -Wextra -Werror -fsanitize=address -g3
 
 # libft
 LIBFT_PATH = ./libft

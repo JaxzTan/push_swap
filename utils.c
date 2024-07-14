@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 10:51:27 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 11:51:09 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/14 13:43:35 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	is_sorted(t_stack **a)
 	{
 		if (temp->val > temp->next->val)
 		{
-			return (1);
 			ft_printf ("not sorted\n");
+			return (1);
 		}
 		temp = temp->next;
 	}
@@ -71,4 +71,15 @@ long	ft_atol(char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+void printLinkedList(t_stack **head)
+{
+    t_stack *current = *head; // Start from the head of the list
+
+    // Traverse the list and print each element
+    while (current != NULL) {
+        ft_printf("Value: %d, Index: %d\n", current->val, current->index);
+        current = current->next; // Move to the next node
+    }
 }
