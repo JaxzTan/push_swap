@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:15:24 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/09 14:01:00 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/15 13:06:43 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	reverse_rotate(t_stack **stack)
 	if (!stack || !(*stack) || !((*stack)->next))
 		return ;
 	last = *stack;
-	while (last->index)
+	while (last->next)
 	{
 		sec_last = last;
 		last = last->next;
@@ -33,18 +33,18 @@ void	reverse_rotate(t_stack **stack)
 void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	ft_putstr_fd("ra", 1);
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
-	ft_putstr_fd("rrb", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a);
 	rrb(b);
-	ft_putstr_fd("rrr", 1);
+	ft_putstr_fd("rrr\n", 1);
 }

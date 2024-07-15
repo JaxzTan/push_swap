@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:03:46 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 13:48:51 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/15 15:35:15 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	label_index(t_stack **stack, int *array)
 		{
 			temp->index = i;
 			temp = temp->next;
+			i = 0;
 		}
 		else
 			i++;
@@ -74,9 +75,9 @@ void	assign_index(t_stack **stack)
 	t_stack	*temp;
 
 	size = get_lstsize(stack);
-	array = malloc (sizeof(int) * size);
+	array = malloc(sizeof(int) * size);
 	if (!array || !(*array))
-		return ;
+		error_message("assign index");
 	temp = *stack;
 	i = -1;
 	while (++i < size)
@@ -87,5 +88,5 @@ void	assign_index(t_stack **stack)
 	bubble_sort(array, size);
 	label_index(stack, array);
 	free(array);
-	ft_printf("index set successful!\n");
+	// ft_printf("index set successful!\n");
 }

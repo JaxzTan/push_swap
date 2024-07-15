@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 10:51:27 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 13:43:35 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/15 15:01:39 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	is_sorted(t_stack **a)
 	{
 		if (temp->val > temp->next->val)
 		{
-			ft_printf ("not sorted\n");
+			// ft_printf ("not sorted\n");
 			return (1);
 		}
 		temp = temp->next;
 	}
-	ft_printf("sorted!\n");
+	// ft_printf("sorted!\n");
 	return (0);
 }
 
@@ -41,8 +41,9 @@ int	count_word(char **array)
 	int	count;
 
 	count = 0;
-	while (array[count])
+	while (array[count] != NULL)
 		count++;
+	// ft_printf("%d", count);
 	return (count);
 }
 

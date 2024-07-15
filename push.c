@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:15:37 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/09 14:00:18 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/15 12:22:57 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	push(t_stack **dest, t_stack **src)
 void	pa(t_stack **a, t_stack **b)
 {
 	push (a, b);
-	ft_putstr_fd("pa", 1);
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	push (b, a);
-	ft_putstr_fd("pb", 1);
+	ft_putstr_fd("pb\n", 1);
 }

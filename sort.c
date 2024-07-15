@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 11:17:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 13:42:08 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/15 13:11:48 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sort_3(t_stack **stack_a)
 	third = temp->next->next->val;
 	if (first > second && first < third)
 		sa(stack_a);
-	else if (first > second && first > third && second < third)
+	else if (first > second && first > third && second > third)
 	{
 		sa(stack_a);
 		rra(stack_a);
@@ -71,14 +71,12 @@ int	count_element(t_stack **a, int count)
 	return (count);
 }
 
-void	sort(t_stack **a)
+void	sort(t_stack **a, t_stack ** b, int num)
 {
-	int	i;
+	(void) b;
 
-	i = 0;
-	count_element(a, i);
-	if (i == 2)
-		sort_2(a);
-	else if (i == 3)
+	// num = 0;
+	// count_element(a, num);
+	if (num == 3)
 		sort_3(a);
 }

@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 13:34:42 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/15 15:57:02 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,12 @@ void	pb(t_stack **a, t_stack **b);
 //  check input
 int		check_dup(char **av);
 int		check_num(int ac, char **av);
+int		check_digit(char **av);
 char	**get_input(int ac, char **av);
+int		*turn_array_to_int(char **array);
 
 //	assign stack
 t_stack	*assign_stack_a(int *input, int ac);
-int		*turn_array_to_int(char **array);
 
 // label index for each node
 void	label_index(t_stack **stack, int *array);
@@ -65,7 +66,7 @@ void	assign_index(t_stack **stack);
 void	sort_2(t_stack **stack);
 void	sort_3(t_stack **stack_a);
 int		count_element(t_stack **a, int count);
-void	sort(t_stack **a);
+void	sort(t_stack **a, t_stack **b, int num);
 
 // utils
 int		is_sorted(t_stack **a);

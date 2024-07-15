@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:01:54 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/14 16:07:54 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/15 14:59:40 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,29 +38,6 @@ t_stack	*assign_stack_a(int *str, int num)
 		else
 			temp->next = NULL;
 	}
-	ft_printf ("assign stack a success!\n");
+	// ft_printf ("assign stack a success!\n");
 	return (a);
-}
-
-int	*turn_array_to_int(char **array)
-{
-	int		*num;
-	long	numb;
-	int		count;
-	int		i;
-
-	i = -1;
-	count = count_word(array);
-	num = (int *)malloc(sizeof(int) * count);
-	if (!num)
-		error_message("empty num while turn into int") ;
-	while (++i < count)
-	{
-		numb = ft_atol(array[i]);
-		if (numb > INT_MAX || numb < INT_MIN)
-			error_message("not valid input");
-		num[i] = (int) numb;
-	}
-	ft_printf ("turn int success!\n");
-	return (num);
 }
