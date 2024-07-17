@@ -20,9 +20,6 @@ SRC = push_swap.c\
 
 OBJ = $(SRC:%.c=%.o)
 
-%.o: %.c
-	$(CC) -c $< -o $@
-
 $(LIBFT) : 
 	make -C $(LIBFT_PATH) all
 	@echo libft done!!!
@@ -33,6 +30,9 @@ all : $(NAME)
 $(NAME) : utils $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(LIBFT)
 
+
+%.o: %.c
+	$(CC) -c $< -o $@
 
 clean :  
 	rm -rf $(OBJ)

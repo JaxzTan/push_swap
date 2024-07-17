@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_input.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 13:19:33 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/15 15:56:47 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/17 10:29:07 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ char	**get_input(int ac, char **av)
 		numbers = ft_split(av[1], ' ');
 		if (!check_dup(numbers) && !check_digit(numbers))
 		{
-			ft_printf ("input1 settle\n");
+			// ft_printf ("input1 settle\n");
 			return (numbers);
 		}
 	}
