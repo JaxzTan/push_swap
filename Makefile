@@ -22,6 +22,15 @@ SRC_FILES =	push_swap\
 			sort_big\
 			count_cost
 
+BONUS_SRC_FILES = assign_stack\
+				get_input\
+				swap\
+				rotate\
+				reverse_rotate\
+				push\
+				utils\
+				checker
+
 SRC = $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(SRC_FILES)))
 BONUS_SRC = $(addprefix $(BONUS_DIR)/, $(addsuffix .c, $(BONUS_SRC_FILES)))
 
@@ -48,15 +57,14 @@ bonus :
 $(OBJ_DIR)/%.o:		$(SRC_DIR)/%.c
 					@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-# $(BONUS_OBJ_DIR)/%.o:		$(BONUS_DIR)/%.c
-# 							@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+$(BONUS_OBJ_DIR)/%.o:		$(BONUS_DIR)/%.c
+							@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(NAME) :	$(OBJ)
 			@$(CC) $(CFLAGS) $(INCLUDE) $(OBJ) $(LIBFT) -o $(NAME)
 
-# $(BONUS_NAME):	$(BONUS_OBJ)
-# 				@printf "$(GREEN)checker object files created.$(RESET)\n"
-# 				@$(CC) $(CFLAGS) $(INCLUDE) $(BONUS_OBJ) $(LIBFT) -o $(BONUS_NAME)
+$(BONUS_NAME):	$(BONUS_OBJ)
+				@$(CC) $(CFLAGS) $(INCLUDE) $(BONUS_OBJ) $(LIBFT) -o $(BONUS_NAME)
 
 clean :
 			@rm -rf $(OBJ_DIR)
