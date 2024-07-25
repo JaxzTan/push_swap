@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 18:06:20 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 11:41:16 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	sort_5(t_stack **a, t_stack **b);
 
 // utils
 int		is_sorted(t_stack **a);
-void	error_message(char *str);
+void	error_message(void);
 int		count_word(char **str);
 long	ft_atol(char *str);
 void	label_possition(t_stack **stack);

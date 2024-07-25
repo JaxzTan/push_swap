@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 17:10:20 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 18:35:05 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 11:41:59 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	**arg_to_str(char **av)
 		if (!av[i][0])
 		{
 			free(container);
-			error_message("input");
+			error_message();
 		}
 		container = ft_strjoin(container, av[i++]);
 		container = ft_strjoin(container, " ");
@@ -46,12 +46,12 @@ int	*turn_array_to_int(char **array)
 	count = count_word(array);
 	num = (int *)malloc(sizeof(int) * count);
 	if (!num)
-		error_message("empty num while turn into int");
+		error_message();
 	while (++i < count)
 	{
 		numb = ft_atol(array[i]);
 		if (numb > INT_MAX || numb < INT_MIN)
-			error_message("not valid input");
+			error_message();
 		num[i] = (int) numb;
 	}
 	return (num);
@@ -70,7 +70,7 @@ int	check_dup(char **av)
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 			{
-				error_message("check dup");
+				error_message();
 				return (1);
 			}
 			j++;
@@ -90,7 +90,7 @@ int	check_digit(char **av)
 	while (av[++i])
 	{
 		if (ft_atol(av[i]) > INT_MAX || ft_atol(av[i]) < INT_MIN)
-			error_message("not int");
+			error_message();
 		j = 0;
 		while (av[i][j])
 		{
@@ -100,7 +100,7 @@ int	check_digit(char **av)
 			while (ft_isdigit(av[i][j]))
 				j++;
 			if (av[i][j] != '\0')
-				error_message("1");
+				error_message();
 		}
 	}
 	return (0);

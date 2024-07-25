@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:57:46 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 19:31:28 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 11:22:27 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	check_and_do_ins(t_stack **a, t_stack **b, char *ins)
 	else if (do_both(a, b, ins))
 		return ;
 	else
-		exit_error();
+		error_message();
 }
 
 void	checker(t_stack **a, t_stack **b)
@@ -57,34 +57,14 @@ void	checker(t_stack **a, t_stack **b)
 	while (steps)
 	{
 		free(steps);
-		steps = get_next_line_bonus(0);
+		steps = get_next_line(0);
 		if (steps)
 			check_and_do_ins(a, b, steps);
 	}
 	if (is_sorted(a) && !(*b))
 		write(1, "OK\n", 3);
 	else
-		write(1, "KO\n", 3);
-}
-
-int	main(int argc, char *argv[])
-{
-	t_stack	*stk_a;
-	t_stack	*stk_b;
-	int		*arr;
-	int		input_len;
-	char	**clean_input;
-
-	if (argc >= 2)
-	{
-		clean_input = arg_to_str(argv);
-		input_len = validate_input(clean_input, &arr);
-		stk_a = init_stack(arr, input_len);
-		stk_b = NULL;
-		checker(&stk_a, &stk_b);
-		free_stack(&stk_a);
-		free(arr);
-	}
+		write(2, "KO\n", 3);
 }
 
 int	main(int ac, char **av)
@@ -106,7 +86,8 @@ int	main(int ac, char **av)
 		input = turn_array_to_int(temp);
 		a = assign_stack_a(input, int_num);
 		b = NULL;
-		
+		checker(&a, &b);
+		free(input);
 	}
 	return (0);
 }

@@ -6,16 +6,26 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:56:45 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 19:32:21 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 11:22:19 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef
+#ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
 # include "../libft/libft.h"
+
+typedef struct s_stack
+{
+	struct s_stack	*next;
+	int				val;
+	int				index;
+	int				pos;
+	int				costa;
+	int				costb;
+}	t_stack;
 
 // swap node
 void	swap(t_stack **stack);
@@ -43,8 +53,23 @@ void	pb(t_stack **a, t_stack **b);
 //assign stack
 t_stack	*assign_stack_a(int *str, int num);
 
+// get_input
+int		*turn_array_to_int(char **array);
+int		check_dup(char **av);
+int		check_digit(char **av);
+char	**get_input(int ac, char **av);
+
+// utils
+int		is_sorted(t_stack **a);
+void	error_message(void);
+long	ft_atol(char *str);
+int		count_word(char **array);
+void	label_possition(t_stack **stack);
+
 //main
+int		do_both(t_stack **a, t_stack **b, char *ins);
 void	checker(t_stack **a, t_stack **b);
-int	do_both(t_stack **a, t_stack **b, char *ins);
+int		do_both(t_stack **a, t_stack **b, char *ins);
+void	checker(t_stack **a, t_stack **b);
 
 #endif

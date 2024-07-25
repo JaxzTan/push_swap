@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 13:41:50 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 19:15:37 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 11:20:01 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,15 @@ void	rotate(t_stack **stack)
 void	ra(t_stack **stk_a)
 {
 	rotate(stk_a);
-	ft_printf("ra\n");
 }
 
 void	rb(t_stack **stk_b)
 {
 	rotate(stk_b);
-	ft_printf("rb\n");
 }
 
 void	rr(t_stack **stk_a, t_stack **stk_b)
 {
 	rotate(stk_a);
 	rotate(stk_b);
-	ft_printf("rr\n");
 }

@@ -28,7 +28,7 @@ BONUS_SRC_FILES = assign_stack\
 				rotate\
 				reverse_rotate\
 				push\
-				utils\
+				utils_bonus\
 				checker
 
 SRC = $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(SRC_FILES)))
@@ -67,7 +67,7 @@ $(BONUS_NAME):	$(BONUS_OBJ)
 				@$(CC) $(CFLAGS) $(INCLUDE) $(BONUS_OBJ) $(LIBFT) -o $(BONUS_NAME)
 
 clean :
-			@rm -rf $(OBJ_DIR)
+			@rm -rf $(OBJ_DIR) $(BONUS_OBJ_DIR)
 			@make clean -C $(LIBFT_DIR)
 			clear
 
