@@ -6,12 +6,17 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 13:41:50 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 17:01:59 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 14:45:10 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
+。error handling
+。initialize pointer to the last node
+。move the head to the next
+。disconnect the previous node and make it become the tail
+*/
 void	rotate(t_stack **stack)
 {
 	t_stack	*temp;
@@ -28,21 +33,21 @@ void	rotate(t_stack **stack)
 	current->next = temp;
 }
 
-void	ra(t_stack **stk_a)
+void	ra(t_stack **a)
 {
-	rotate(stk_a);
+	rotate(a);
 	ft_printf("ra\n");
 }
 
-void	rb(t_stack **stk_b)
+void	rb(t_stack **b)
 {
-	rotate(stk_b);
+	rotate(b);
 	ft_printf("rb\n");
 }
 
-void	rr(t_stack **stk_a, t_stack **stk_b)
+void	rr(t_stack **a, t_stack **b)
 {
-	rotate(stk_a);
-	rotate(stk_b);
+	rotate(a);
+	rotate(b);
 	ft_printf("rr\n");
 }

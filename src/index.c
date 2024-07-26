@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:03:46 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 17:45:13 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 15:21:06 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,23 +67,29 @@ void	bubble_sort(int *stack, int size)
 	}
 }
 
+/*
+first is to turn stack to int array to label index
+and throw to bubble sort
+and last label
+delete temp array
+*/
 void	assign_index(t_stack **stack)
 {
-	int		*array;
+	int		*temp_array;
 	int		size;
 	int		i;
 	t_stack	*temp;
 
 	size = get_lstsize(stack);
-	array = malloc(sizeof(int) * size);
+	temp_array = malloc(sizeof(int) * size);
 	temp = *stack;
 	i = -1;
 	while (++i < size)
 	{
-		array[i] = temp->val;
+		temp_array[i] = temp->val;
 		temp = temp->next;
 	}
-	bubble_sort(array, size);
-	label_index(stack, array);
-	free(array);
+	bubble_sort(temp_array, size);
+	label_index(stack, temp_array);
+	free(temp_array);
 }

@@ -20,7 +20,7 @@ SRC_FILES =	push_swap\
 			utils\
 			index\
 			sort_big\
-			count_cost
+			count_cost\
 
 BONUS_SRC_FILES = assign_stack\
 				get_input\
@@ -79,3 +79,6 @@ fclean:
 re:			fclean all
 
 .PHONY:	clean fclean re all bonus
+
+norm:
+	norminette src bonus

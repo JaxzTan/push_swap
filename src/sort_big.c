@@ -6,12 +6,19 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 15:05:49 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 18:03:42 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/26 10:25:37 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
+。find the chepeat node to push to a
+。cur = first of stack b
+。cheapest node = result
+。fist set the chepest with cur
+。loop through the stack b
+if there are cost of node cheaper than the cur, target will change to the node
+*/
 t_stack	*cheapest(t_stack **stack)
 {
 	t_stack	*current;
@@ -23,7 +30,7 @@ t_stack	*cheapest(t_stack **stack)
 	{
 		if (cheapest_node)
 		{
-			if (cost(cheapest_node) > cost(current))
+			if (total_cost(cheapest_node) > total_cost(current))
 				cheapest_node = current;
 		}
 		else
@@ -33,6 +40,10 @@ t_stack	*cheapest(t_stack **stack)
 	return (cheapest_node);
 }
 
+/*
+。if both cost is smaller than 0 will reverse rotate both stack
+。if both cost is bigger than 0 will rotate both stack
+*/
 void	rotate_both(t_stack *node_to_push, t_stack **a, t_stack **b)
 {
 	if (node_to_push->costa < 0 && node_to_push->costb < 0)
@@ -55,6 +66,13 @@ void	rotate_both(t_stack *node_to_push, t_stack **a, t_stack **b)
 	}
 }
 
+/*
+。find node that cheapest
+。Rotate both stacks to align node_to_push optimally
+。adjust node with rra or ra
+。rotate b or reverse rotate b when cost smaller than 0
+。if there are cost a and cost b will push to a
+*/
 void	push_node(t_stack **a, t_stack **b)
 {
 	t_stack	*node_to_push;
@@ -76,7 +94,14 @@ void	push_node(t_stack **a, t_stack **b)
 	pa(a, b);
 }
 
-//pre sort
+/*pre sort
+。mid = half of totol node
+。len_to_push = total node need to push and remain 3 to sort 3
+for the push to b part
+。will first push the smaller numbers until half of the node
+has been push to b
+。for the rest will push to b with no contitions
+*/
 void	push_to_b(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;

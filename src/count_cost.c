@@ -6,13 +6,15 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 11:42:48 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 18:02:39 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 18:58:40 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	cost(t_stack *node)
+/*
+add cost a and cost b become total cost
+*/
+int	total_cost(t_stack *node)
 {
 	int	cost;
 
@@ -44,6 +46,14 @@ t_stack	*find_smallest(t_stack **stack)
 	return (smallest);
 }
 
+/*
+the curr is first node of stack b!!!
+。if the index of b is smaller than index of a(will become the first target)
+。if there are no index of a is bigger than b it will choose the smallest in
+a become the target
+。if the the target is set but the next node of stack A is better it will choose
+the next node of stack a become target.
+*/
 t_stack	*find_target(t_stack **a, int b_index)
 {
 	t_stack	*temp;
@@ -67,6 +77,10 @@ t_stack	*find_target(t_stack **a, int b_index)
 	return (target);
 }
 
+/*
+will first find the target
+that label cost of target to top of stack a
+*/
 void	calculate_cost(t_stack **a, t_stack **b)
 {
 	t_stack	*temp_b;

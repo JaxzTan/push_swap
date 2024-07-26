@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:35:56 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/25 11:41:16 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/26 10:24:56 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ void	pb(t_stack **a, t_stack **b);
 int		check_dup(char **av);
 int		check_digit(char **av);
 char	**get_input(int ac, char **av);
-int		*turn_array_to_int(char **array);
 
 //	assign stack
 t_stack	*assign_stack_a(int *input, int ac);
+int		*turn_array_to_int(char **array);
 
 // label index for each node
 void	label_index(t_stack **stack, int *array);
@@ -68,7 +68,6 @@ void	assign_index(t_stack **stack);
 // simple sort 2 & 3
 void	sort_3(t_stack **stack_a);
 int		count_element(t_stack **stack);
-void	sort(t_stack **a, t_stack **b, int num);
 void	sort_5(t_stack **a, t_stack **b);
 
 // utils
@@ -80,7 +79,6 @@ void	label_possition(t_stack **stack);
 
 // temp
 void	printLinkedList(t_stack **head);
-void	order_stack_a(t_stack **stk_a);
 
 // sort big
 void	sort_big(t_stack **a, t_stack **b);
@@ -93,6 +91,10 @@ void	rotate_both(t_stack *node_to_push, t_stack **a, t_stack **b);
 void	calculate_cost(t_stack **a, t_stack **b);
 t_stack	*find_smallest(t_stack **stack);
 t_stack	*find_target(t_stack **a, int cur_index);
-int		cost(t_stack *node);
+int		total_cost(t_stack *node);
+
+//main
+void	sort(t_stack **a, t_stack **b, int num);
+void	order_stack_a(t_stack **stk_a);
 
 #endif

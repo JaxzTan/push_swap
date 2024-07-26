@@ -6,12 +6,13 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:57:46 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/25 11:22:27 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 18:19:41 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
+// if valid operations will do operations without priting steps
 int	do_both(t_stack **a, t_stack **b, char *ins)
 {
 	if (ft_strcmp(ins, "rr\n") == 0)
@@ -49,6 +50,11 @@ static void	check_and_do_ins(t_stack **a, t_stack **b, char *ins)
 		error_message();
 }
 
+/*
+。while there are steps(operations) will store steps with gnl(0)(as a std input)
+and check those operations
+。the main point is is sorted
+*/
 void	checker(t_stack **a, t_stack **b)
 {
 	char	*steps;

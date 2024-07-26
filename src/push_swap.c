@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 13:29:47 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 17:58:32 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 18:13:45 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ void	sort(t_stack **a, t_stack **b, int num)
 		sort_3(a);
 	else if (num <= 5)
 		sort_5(a, b);
-	else if (num > 5)
+	else
 		sort_big(a, b);
 }
 
+/*
+find the smallest node in stack a and push it to the top using ra or rra
+*/
 void	order_stack_a(t_stack **stk_a)
 {
 	t_stack	*current;

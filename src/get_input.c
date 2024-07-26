@@ -6,12 +6,12 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 17:10:20 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/25 11:41:59 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 13:13:20 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+// for save to handle like ("4 5" 3 1 2)
 static char	**arg_to_str(char **av)
 {
 	int		i;
@@ -35,28 +35,6 @@ static char	**arg_to_str(char **av)
 	return (str_arr);
 }
 
-int	*turn_array_to_int(char **array)
-{
-	int		*num;
-	long	numb;
-	int		count;
-	int		i;
-
-	i = -1;
-	count = count_word(array);
-	num = (int *)malloc(sizeof(int) * count);
-	if (!num)
-		error_message();
-	while (++i < count)
-	{
-		numb = ft_atol(array[i]);
-		if (numb > INT_MAX || numb < INT_MIN)
-			error_message();
-		num[i] = (int) numb;
-	}
-	return (num);
-}
-
 int	check_dup(char **av)
 {
 	int	i;
@@ -69,10 +47,7 @@ int	check_dup(char **av)
 		while (av[j])
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-			{
 				error_message();
-				return (1);
-			}
 			j++;
 		}
 	}
@@ -118,3 +93,9 @@ char	**get_input(int ac, char **av)
 	}
 	return (0);
 }
+//error management part
+/* 
+。when arguments is not integer, not between int min and int max,
+and when it's duplicate. Should return error follow by newline.
+。When arguments is empty, should just return without priting any error
+*/

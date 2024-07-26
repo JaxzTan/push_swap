@@ -6,12 +6,16 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 10:08:54 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/24 17:01:08 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 14:45:01 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
+。error handling
+。store first node in temp
+。swap process
+*/
 void	swap(t_stack **stack)
 {
 	t_stack	*temp;
@@ -24,21 +28,21 @@ void	swap(t_stack **stack)
 	(*stack)->next = temp;
 }
 
-void	sa(t_stack **stack_a)
+void	sa(t_stack **a)
 {
-	swap(stack_a);
+	swap(a);
 	ft_printf("sa\n");
 }
 
-void	sb(t_stack **stack_b)
+void	sb(t_stack **b)
 {
-	swap(stack_b);
+	swap(b);
 	ft_printf("sb\n");
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **a, t_stack **b)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap(a);
+	swap(b);
 	ft_printf("ss\n");
 }

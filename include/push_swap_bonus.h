@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:56:45 by chtan             #+#    #+#             */
-/*   Updated: 2024/07/25 11:22:19 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/25 18:22:24 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int		count_word(char **array);
 void	label_possition(t_stack **stack);
 
 //main
-int		do_both(t_stack **a, t_stack **b, char *ins);
 void	checker(t_stack **a, t_stack **b);
 int		do_both(t_stack **a, t_stack **b, char *ins);
 void	checker(t_stack **a, t_stack **b);
